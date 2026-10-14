@@ -31,7 +31,7 @@ print(f"the number you entered is {num}")'''
 # To use a function (call it), write out its name with parnthesis at the end.
 # To create a function, start with the word def
 
-def input_check():
+'''def input_check():
     while True:
         try:
             num = float(input("Please enter a number: "))
@@ -42,4 +42,31 @@ def input_check():
     print(f"The number you entered us {num}")
 
 # Main Routine
-input_check() #This calls the funtion so that it can be used.
+input_check() #This calls the funtion so that it can be used.'''
+
+# V1.3 Valid input chekcer
+# Use parameters in the function
+# More Pythonic
+
+def input_check(question): # 'question' is a placeholder
+    while True:
+        error = 'That is not a valid number'
+        print(question)
+        try:
+            num = float(input())
+            break
+        except ValueError:
+            print(error)
+
+    return(num) #Gives back the value of num so that I can use it outside of the function
+
+# Main routine
+num1 = input_check("Please enter your first number:")
+print(f"The number you stored is {num1}")
+
+num2 = input_check("Please enter your second number:")
+print(f"The second number you stored is {num2}")
+
+sum = num1 + num2
+print(f"Your numbers added together result in {sum}")
+

@@ -14,7 +14,7 @@ print(f"The number you entered is {number_checker}")'''
 # Using a try and except method to check for valid input (V1.1)
 # Use try and except method to catch errors
 
-done = False
+'''done = False
 while not done:
     try: # This method tries for a valid input
         num = float(input("please enter a number: "))
@@ -23,4 +23,23 @@ while not done:
     except ValueError:
         print("That is not a valid float number. \nUse a fullstop as a decimal indicator.")
 
-print(f"the number you entered is {num}")
+print(f"the number you entered is {num}")'''
+
+# Checking for valid input and recycling code with a function (V1.2)
+# for a number. A function is a chunck of code that does something
+# Functions can be used over and over again
+# To use a function (call it), write out its name with parnthesis at the end.
+# To create a function, start with the word def
+
+def input_check():
+    while True:
+        try:
+            num = float(input("Please enter a number: "))
+            break
+        except ValueError:
+            print("That is not a valid float number. \n")
+
+    print(f"The number you entered us {num}")
+
+# Main Routine
+input_check() #This calls the funtion so that it can be used.

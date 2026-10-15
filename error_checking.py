@@ -1,7 +1,7 @@
 # Error Checking
 # Jean de Klerk
-# 14/10/26
-# Version 1
+# 16/10/26
+# Version 1.4
 
 #Code that tests whether a valid input was give
 '''done = True # Boolean variable set to True
@@ -48,7 +48,7 @@ input_check() #This calls the funtion so that it can be used.'''
 # Use parameters in the function
 # More Pythonic
 
-def input_check(question): # 'question' is a placeholder
+'''def input_check(question): # 'question' is a placeholder
     while True:
         error = 'That is not a valid number'
         print(question)
@@ -68,5 +68,44 @@ num2 = input_check("Please enter your second number:")
 print(f"The second number you stored is {num2}")
 
 sum = num1 + num2
-print(f"Your numbers added together result in {sum}")
+print(f"Your numbers added together result in {sum}")'''
 
+# V1.4 Checking for valid input using try/except method
+# Using parameters (placeholders) to make the code more puthonic
+# FUnction that asks user to enter a number from a range
+def valid_num(question, low, high):
+    error = f"Whoops, that is not an integer between {low} and {high}."
+    while True:
+        try:
+            response = int(input(question))
+            # if the response >= to the low nr or <= high nr
+            if low <= response <= high:
+                break
+
+            else:
+                print(f"{error}\n")
+
+        except ValueError:
+            print(error)
+    return response # This makes the response available to be used as a function
+
+# Main Routine
+if __name__ =="__main__":
+
+    num1 = valid_num("Enter a number between 1-10: ", 1, 10)
+    print(f"The number you enterered in {num1}. \n")
+
+    num2 = valid_num("Enter a number between 15 and 20: ", 15, 20)
+    print(f"The number you entered is {num2}.\n")
+
+    num3 = valid_num("Enter a number between 80 and 100: ", 80, 100)
+    print(f"The number you entered is {num3}.\n")
+
+    #Multiply the resukt of num 1, num 2, and num 3
+    multiply = num1 * num2 * num3
+    print(f"The product of the mubers you entered is {multiply}")
+
+    #Add the results of num 1, num2, num3
+    sum = num1 + num2 +num3
+    print(f"The sum of the three numbers you entered is {sum}")
+    

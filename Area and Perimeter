@@ -1,7 +1,7 @@
 # 21/10/2026
 # Jean de Klerk
 # Area and Perimeter calculator
-# Version 1
+# Version 2
 
 # TODO:
 # Ask user for width and height (must be more than 0)
@@ -15,7 +15,8 @@
 # greet the user
 # output the results of doubling, halving and squaring their number
 
-username = input("What is your name? ")
+# V1
+'''username = input("What is your name? ")
 fav_num = int(input("What is your favourite number? "))
 double = fav_num*2
 halve = fav_num/2
@@ -27,4 +28,21 @@ print(f"The result of doubling the number you entered is {double}")
 print(f"The result of halving the number you entered is {halve}")
 print(f"The result of squaring the number you entered is {square}")
 print()
-print(f"Have a nice day")
+print(f"Have a nice day")'''
+
+# V2
+# Ask user for width and loop until they enter a number that is more than 0
+
+error = "Please enter a number that is more than 0\n"
+while True:
+
+    try:
+        width = float(input("Width "))
+
+        if width > 0:
+            break
+        else:
+            print(error)
+
+    except ValueError:
+        print(error)

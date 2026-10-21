@@ -1,0 +1,30 @@
+# 21/10/2026
+# Jean de Klerk
+# Area and Perimeter calculator
+# Version 1
+
+# TODO:
+# Ask user for width and height (must be more than 0)
+# Calculate area and perimeter
+# Allow programme to loop
+# Create a number checker
+
+# ask user for their name
+# ask the user for their favourite number (integer)
+# double, halve and square the user's favourite number
+# greet the user
+# output the results of doubling, halving and squaring their number
+
+username = input("What is your name? ")
+fav_num = int(input("What is your favourite number? "))
+double = fav_num*2
+halve = fav_num/2
+square = fav_num*fav_num
+
+print(f"hi {username}, your favourite number is {fav_num}.")
+
+print(f"The result of doubling the number you entered is {double}")
+print(f"The result of halving the number you entered is {halve}")
+print(f"The result of squaring the number you entered is {square}")
+print()
+print(f"Have a nice day")

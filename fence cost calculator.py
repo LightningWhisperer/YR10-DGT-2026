@@ -1,7 +1,7 @@
 # 28/10/2026
 # Jean de Klerk
 # Fence cost calculator
-# Version 1
+# Version 2
 
 # Error Checking
 def num_check(question):
@@ -28,8 +28,9 @@ keep_going = ""
 while keep_going == "":
 
     # Ask user for height and width
-    length = num_check("Please enter the length of the fence: ")
-    width = num_check("Please enter a the width of the fence: ")
+    length = num_check("Please enter the length of the fence: \n")
+    print()
+    width = num_check("Please enter the width of the fence: \n")
 
     # Work out and display perimeter
     perimeter = 2 * (width + length)
@@ -47,4 +48,4 @@ while keep_going == "":
     keep_going = input("Press enter to keep going or any key to quit  ")
     print()
     
-    print("Thank you for using the area / perimeter calculator")
+    print("Thank you for using the fence cost calculator! If you enjoy using this program please consider sponsoring a coffee.")

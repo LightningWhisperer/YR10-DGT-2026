@@ -49,7 +49,7 @@ while True:
 
 # V3
 
-def num_check(question):
+'''def num_check(question):
 
     error = "Please enter a number that is more than 0\n"
     while True:
@@ -74,4 +74,54 @@ for item in range (0, 2):
 
 for item in range (0, 2):
     height = num_check("Height: ")
-    print(height)
+    print(height)'''
+
+# V4
+# Ask the user for the width and height
+# (Assume they put in valid data)
+
+'''width = float(input("Width: "))
+height = float(input("Height: "))
+
+# Calculate the Area/Perimeter
+area = height * width
+perimeter = 2 * (height + width)
+
+# Output the area / perimeter
+print()
+print(f"Perimeter: {perimeter} units")
+print(f"Area: {area} square units")'''
+
+
+
+def num_check(question):
+    error = "Please enter a number that is more than 0\n"
+    while True:
+
+        try:
+            response = float(input(question))
+
+            if response > 0:
+                return response
+            else:
+                print(error)
+
+        except ValueError:
+            print(error)
+
+keep_going = ""
+while keep_going == "":
+    height = num_check("Height: ")
+    width = num_check("Width: ")
+
+    area = width * height
+    perimeter = 2 * (width + height)
+
+    print()
+    print(f"Perimeter: {perimeter} units")
+    print(f"Area: {area} square units")
+
+    keep_going = input("Press enter to keep going or any key to quit")
+    print()
+
+print("Thank you for using the area / perimeter calculator")

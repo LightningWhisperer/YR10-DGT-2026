@@ -1,7 +1,7 @@
-# 28/10/2026
+# 30/10/2026
 # Jean de Klerk
 # Fence cost calculator
-# Version 2
+# Version 3
 
 # Error Checking
 def num_check(question):
@@ -9,7 +9,7 @@ def num_check(question):
     # Error checking that a number is more than 0
     error_0 = "Please enter a number that is more than 0\n"
     # Error checking that a number is valid (not a word or roman numerals)
-    error_message = "Please enter a valid number"
+    error_message = "Please enter a valid number\n"
     while True:
 
         try:
@@ -26,26 +26,57 @@ def num_check(question):
 # Main Routine
 keep_going = ""
 while keep_going == "":
+    # Credits
+    print("Coding and formatting by JDK, with the use of Visual Studio code. This project was last updated 30/10/2026")
 
-    # Ask user for height and width
-    length = num_check("Please enter the length of the fence: \n")
+    # Title
+    print("________________________________________")
+    print("| W𝖊𝖑𝖈𝖔𝖒𝖊 𝖙𝖔 𝖙𝖍𝖊 𝕱𝖊𝖓𝖈𝖊 𝕮𝖔𝖘𝖙 𝕮𝖆𝖑𝖈𝖚𝖑𝖆𝖙𝖔𝖗 |")
+    print("<--------------------------------------->")
     print()
-    width = num_check("Please enter the width of the fence: \n")
 
-    # Work out and display perimeter
+    # Introduction
+    print("This programme is designed to calculate the cost of your fence based on its price per meter. \n simply answer the questions below, and the program will calculate the price.")
+    print()
+
+    # Ask user for length of the fence
+    print("***************************************************")
+    print("     ᴡʜᴀᴛ ɪꜱ ᴛʜᴇ ʟᴇɴɢᴛʜ ᴏꜰ ʏᴏᴜʀ ꜰᴇɴᴄᴇ (ᴍᴇᴛᴇʀꜱ)? ")
+    print("***************************************************")
+    length = num_check ("Answer: ")
+    print()
+
+    # Ask user for width of the fence
+    print("*************************************************")
+    print("     ᴡʜᴀᴛ ɪꜱ ᴛʜᴇ ᴡɪᴅᴛʜ ᴏꜰ ʏᴏᴜʀ ꜰᴇɴᴄᴇ (ᴍᴇᴛᴇʀꜱ)?")
+    print("*************************************************")
+    width = num_check ("Answer: ")
+
+    # Work out perimeter
     perimeter = 2 * (width + length)
     print()
-    print(f"Perimeter: {perimeter} meters")
 
     # Ask user for $/m of fence
-    cost = num_check("Please enter the price per meter of your fence: ")
+    print("************************************************************")
+    print("     ᴘʟᴇᴀꜱᴇ ᴇɴᴛᴇʀ ᴛʜᴇ ᴘʀɪᴄᴇ ᴘᴇʀ ᴍᴇᴛᴇʀ ᴏꜰ ʏᴏᴜʀ ꜰᴇɴᴄᴇ ($) ")
+    print("************************************************************")
+    cost = num_check ("Answer: ")
+    print()
 
-    # Work out cost of the perimeter of the fence and display the cost of the fence
+    # Work out cost of the perimeter of the fence
     cost_of_fence = perimeter * cost
- 
-    print(f"The cost of your fence is {cost_of_fence}")
 
+    # Display cost of the fence
+    print("******************************************************")
+    print(f"ᴛʜᴇ ᴄᴏꜱᴛ ᴏꜰ ʏᴏᴜʀ ꜰᴇɴᴄᴇ ɪꜱ ${cost_of_fence}")
+    print("******************************************************")
+    print()
+
+    # Ask if the User wants to keep going
+    print("Do you want to keep going?")
+    print("--")
     keep_going = input("Press enter to keep going or any key to quit  ")
     print()
+
     
-    print("Thank you for using the fence cost calculator! If you enjoy using this program please consider sponsoring a coffee.")
+    print("Thank you for using the fence cost calculator!")

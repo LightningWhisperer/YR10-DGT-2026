@@ -84,16 +84,19 @@ while keep_going == "":
     # Work out cost of the perimeter of the fence
     cost_of_fence = perimeter * cost
 
-    # Work out the price with added GST
+    # Work out the price with added GST (gst15 represents 15%)
     gst15 = cost_of_fence * 1.15
 
     # Loading Animation
-    import time
 
-    while True:
+    import time
+    for _ in range(3):
         for i in range (1,4):
-            print("Loading" + "." * i, end="/r")
+            # "______" clears out any previous 'dots'
+            print("Loading" + "." * i + "    ", end="\r", flush=True)
             time.sleep(0.5)
+    print()
+    print("ALL DONE!")
 
     # Display cost of the fence without GST
     print(".~~~~----------------------------------------------------~~~~,")
@@ -122,8 +125,26 @@ while keep_going == "":
     # Ask if the User wants to keep going
     print("Do you want to keep going?")
     print("--")
-    keep_going = input("Press enter to keep going or any key to quit  ")
+    keep_going = input("Press <enter> to keep going or any key to quit  ")
     print()
 
-    
-    print("Thank you for using the fence cost calculator!")
+    print("_________________________________________________")
+    print("| Thank you for using the fence cost calculator! |")
+    print("_________________________________________________")
+    print()
+    print()
+    print("+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++")
+    print()
+    print("     𝕀𝕗 𝕪𝕠𝕦 𝕖𝕟𝕛𝕠𝕪𝕖𝕕 𝕥𝕙𝕚𝕤 𝕡𝕣𝕠𝕕𝕦𝕔𝕥, 𝕡𝕝𝕖𝕒𝕤𝕖 𝕔𝕠𝕟𝕤𝕚𝕕𝕖𝕣 𝕤𝕡𝕠𝕟𝕤𝕠𝕣𝕚𝕟𝕘 𝕒 \n        𝕔𝕠𝕗𝕗𝕖𝕖 𝕥𝕠 𝕙𝕖𝕝𝕡 𝕞𝕒𝕚𝕟𝕥𝕒𝕚𝕟 𝕤𝕚𝕥𝕖 𝕔𝕠𝕤𝕥𝕤.☕︎")
+    print()
+    print("+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++")
+    print()
+    print(" This site has 4 star review on google. Please consider leaving a review!")
+    print(" ★ ★ ★ ★ ☆")
+    print()
+    print(".~~~~----------------------------------------------------~~~~,")
+    print("                  𝒫𝓁𝑒𝒶𝓈𝑒 𝓁𝑒𝒶𝓋𝑒 𝒶 𝓇𝑒𝓋𝒾𝑒𝓌               ")
+    print(".~~~~----------------------------------------------------~~~~,")
+    leave_a_review = ("Review: ")
+    print()
+    print("Unknown_User8:       {leave_a_review}")

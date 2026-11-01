@@ -1,7 +1,7 @@
-# 30/10/2026
+# 31/11/2026
 # Jean de Klerk
 # Fence cost calculator
-# Version 4
+# Version 5
 
 # Error Checking
 def num_check(question):
@@ -29,7 +29,7 @@ while keep_going == "":
 
     # Credits
     print()
-    print("Coding and formatting by JDK, with the use of Visual Studio code. This project was last updated 30/10/2026")
+    print("Coding and formatting by JDK, with the use of Visual Studio code. This project was last updated 1/11/2026")
     print()
 
     # Title
@@ -67,6 +67,7 @@ while keep_going == "":
     print()
     fence_type = input("Answer: ")
     print()
+    print(f"That's Great! {fence_type} is such a lovely choice ♡!")
 
     # Work out perimeter
     perimeter = 2 * (width + length)
@@ -85,6 +86,14 @@ while keep_going == "":
 
     # Work out the price with added GST
     gst15 = cost_of_fence * 1.15
+
+    # Loading Animation
+    import time
+
+    while True:
+        for i in range (1,4):
+            print("Loading" + "." * i, end="/r")
+            time.sleep(0.5)
 
     # Display cost of the fence without GST
     print(".~~~~----------------------------------------------------~~~~,")

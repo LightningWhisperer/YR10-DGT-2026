@@ -1,7 +1,7 @@
 # 31/11/2026
 # Jean de Klerk
 # Fence cost calculator
-# Version 5
+# Version 5.2
 
 # Error Checking
 def num_check(question):
@@ -67,7 +67,7 @@ while keep_going == "":
     print()
     fence_type = input("Answer: ")
     print()
-    print(f"That's Great! {fence_type} is such a lovely choice ♡!")
+    print(f"♡ That's Great! {fence_type} is such a lovely choice! ♡")
 
     # Work out perimeter
     perimeter = 2 * (width + length)
@@ -139,12 +139,13 @@ while keep_going == "":
     print()
     print("+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++")
     print()
-    print(" This site has 4 star review on google. Please consider leaving a review!")
+    print(" This site has a 4 star review on google. Please consider leaving a review!")
     print(" ★ ★ ★ ★ ☆")
     print()
     print(".~~~~----------------------------------------------------~~~~,")
     print("                  𝒫𝓁𝑒𝒶𝓈𝑒 𝓁𝑒𝒶𝓋𝑒 𝒶 𝓇𝑒𝓋𝒾𝑒𝓌               ")
     print(".~~~~----------------------------------------------------~~~~,")
-    leave_a_review = ("Review: ")
+    leave_a_review = input("Review: ")
     print()
-    print("Unknown_User8:       {leave_a_review}")
+    print(f"Unknown_User8:       {leave_a_review}")
+    print()

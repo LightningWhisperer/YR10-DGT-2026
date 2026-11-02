@@ -1,7 +1,7 @@
-# 31/11/2026
+# 2/11/2026
 # Jean de Klerk
 # Fence cost calculator
-# Version 5.2
+# Version 6
 
 # Error Checking
 def num_check(question):
@@ -45,27 +45,29 @@ while keep_going == "":
     print()
 
     # Ask user for length of the fence
-    print(".~~~~-------------------------------------------~~~~,")
+    section = "=" * 50
+    subsection = "-" * 50
+    print(f"{section}")
     print("     ᴡʜᴀᴛ ɪꜱ ᴛʜᴇ ʟᴇɴɢᴛʜ ᴏꜰ ʏᴏᴜʀ ꜰᴇɴᴄᴇ (ᴍᴇᴛᴇʀꜱ)? ")
-    print(".~~~~-------------------------------------------~~~~,")
+    print(f"{section}")
     print()
     length = num_check ("Answer: ")
     print()
 
     # Ask user for width of the fence
-    print(".~~~~-------------------------------------------~~~~,")
+    print(f"{section}")
     print("     ᴡʜᴀᴛ ɪꜱ ᴛʜᴇ ᴡɪᴅᴛʜ ᴏꜰ ʏᴏᴜʀ ꜰᴇɴᴄᴇ (ᴍᴇᴛᴇʀꜱ)?")
-    print(".~~~~-------------------------------------------~~~~,")
+    print(f"{section}")
     print()
     width = num_check ("Answer: ")
     print()
 
     # Ask user what type of fence they are pricing
-    print(".~~~~-------------------------------------------~~~~,")
-    print("         ᴡʜᴀᴛ ᴛʏᴘᴇ ᴏꜰ ꜰᴇɴᴄᴇ ᴀʀᴇ ʏᴏᴜ ʙᴜɪʟᴅɪɴɢ? ")
-    print(".~~~~-------------------------------------------~~~~,")
+    print(f"{subsection}")
+    print("        ᴡʜᴀᴛ ᴛʏᴘᴇ ᴏꜰ ꜰᴇɴᴄᴇ ᴀʀᴇ ʏᴏᴜ ʙᴜɪʟᴅɪɴɢ? ")
+    print(f"{subsection}")
     print()
-    fence_type = input("Answer: ")
+    fence_type = input("Answer: ").title() # Makes the input capatilised (if not already)
     print()
     print(f"♡ That's Great! {fence_type} is such a lovely choice! ♡")
 
@@ -74,9 +76,9 @@ while keep_going == "":
     print()
 
     # Ask user for $/m of fence
-    print(".~~~~----------------------------------------------------~~~~,")
-    print("     ᴘʟᴇᴀꜱᴇ ᴇɴᴛᴇʀ ᴛʜᴇ ᴘʀɪᴄᴇ ᴘᴇʀ ᴍᴇᴛᴇʀ ᴏꜰ ʏᴏᴜʀ ꜰᴇɴᴄᴇ ($) ")
-    print(".~~~~----------------------------------------------------~~~~,")
+    print(f"{section}")
+    print("ᴘʟᴇᴀꜱᴇ ᴇɴᴛᴇʀ ᴛʜᴇ ᴘʀɪᴄᴇ ᴘᴇʀ ᴍᴇᴛᴇʀ ᴏꜰ ʏᴏᴜʀ ꜰᴇɴᴄᴇ ($) ")
+    print(f"{section}")
     print()
     cost = num_check ("Answer: ")
     print()
@@ -88,37 +90,39 @@ while keep_going == "":
     gst15 = cost_of_fence * 1.15
 
     # Loading Animation
-
     import time
     for _ in range(3):
-        for i in range (1,4):
+        for i in range (0,4):
             # "______" clears out any previous 'dots'
-            print("Loading" + "." * i + "    ", end="\r", flush=True)
+            print("Loading" + "." * i + "    ", end="\r", flush=True) # \r resets the line to the start, flush=true removes the previous line before rewriting it
             time.sleep(0.5)
     print()
-    print("ALL DONE!")
+    print("\n✓ Calculation Complete!")
+    time.sleep(1)
 
     # Display cost of the fence without GST
-    print(".~~~~----------------------------------------------------~~~~,")
-    print(f"    ᴛʜᴇ ᴄᴏꜱᴛ ᴏꜰ ʏᴏᴜʀ ꜰᴇɴᴄᴇ (Excluding GST) ɪꜱ ${cost_of_fence:.2f}") # ".2f" means that the number is formatted with two decimal points
-    print(".~~~~----------------------------------------------------~~~~,")
+    print(f"{section}")
+    print(f"   ᴛʜᴇ ᴄᴏꜱᴛ ᴏꜰ ʏᴏᴜʀ ꜰᴇɴᴄᴇ (Excluding GST) ɪꜱ ${cost_of_fence:.2f}") # ".2f" means that the number is formatted with two decimal points (like money)
+    print(f"{section}")
     print()
+    time.sleep(2)
 
     # Display cost of the fence with GST
     print("******************************************************")
-    print(f"ᴛʜᴇ ᴄᴏꜱᴛ ᴏꜰ ʏᴏᴜʀ ꜰᴇɴᴄᴇ (Including GST) ɪꜱ ${gst15:.2f}")
+    print(f"ᴛʜᴇ ᴄᴏꜱᴛ ᴏꜰ ʏᴏᴜʀ ꜰᴇɴᴄᴇ (Including GST 15%) ɪꜱ ${gst15:.2f}")
     print("******************************************************")
     print()
+    time.sleep(2)
 
     # SUmmay of information entered and outputs
     print("========== FENCE SUMMARY ==========")
-    print(f"Length: {length} meters")
-    print(f"Width: {width} meters")
-    print(f"Perimeter: {perimeter} meters")
-    print(f"Type of fence evaluated: {fence_type}")
-    print(f"Price per metre: ${cost:.2f}")
-    print(f"Cost (ex GST): ${cost_of_fence:.2f}")
-    print(f"Cost (inc GST): ${gst15:.2f}")
+    print(f"        Length: {length} meters")
+    print(f"        Width: {width} meters")
+    print(f"        Perimeter: {perimeter} meters")
+    print(f"        Type of fence evaluated: {fence_type}")
+    print(f"        Price per metre: ${cost:.2f}")
+    print(f"        Cost (ex GST): ${cost_of_fence:.2f}")
+    print(f"        Cost (inc GST): ${gst15:.2f}")
     print("===================================")
     print()
 
@@ -128,24 +132,31 @@ while keep_going == "":
     keep_going = input("Press <enter> to keep going or any key to quit  ")
     print()
 
-    print("_________________________________________________")
-    print("| Thank you for using the fence cost calculator! |")
-    print("_________________________________________________")
-    print()
-    print()
-    print("+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++")
-    print()
-    print("     𝕀𝕗 𝕪𝕠𝕦 𝕖𝕟𝕛𝕠𝕪𝕖𝕕 𝕥𝕙𝕚𝕤 𝕡𝕣𝕠𝕕𝕦𝕔𝕥, 𝕡𝕝𝕖𝕒𝕤𝕖 𝕔𝕠𝕟𝕤𝕚𝕕𝕖𝕣 𝕤𝕡𝕠𝕟𝕤𝕠𝕣𝕚𝕟𝕘 𝕒 \n        𝕔𝕠𝕗𝕗𝕖𝕖 𝕥𝕠 𝕙𝕖𝕝𝕡 𝕞𝕒𝕚𝕟𝕥𝕒𝕚𝕟 𝕤𝕚𝕥𝕖 𝕔𝕠𝕤𝕥𝕤.☕︎")
-    print()
-    print("+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++")
-    print()
-    print(" This site has a 4 star review on google. Please consider leaving a review!")
-    print(" ★ ★ ★ ★ ☆")
-    print()
-    print(".~~~~----------------------------------------------------~~~~,")
-    print("                  𝒫𝓁𝑒𝒶𝓈𝑒 𝓁𝑒𝒶𝓋𝑒 𝒶 𝓇𝑒𝓋𝒾𝑒𝓌               ")
-    print(".~~~~----------------------------------------------------~~~~,")
-    leave_a_review = input("Review: ")
-    print()
-    print(f"Unknown_User8:       {leave_a_review}")
-    print()
+    # End proramme after asking for a review
+    if keep_going != "":  # The exclamation means it is not equal to an empty string (meaning the user didn"t just press <enter>)
+        print("_________________________________________________")
+        print("| Thank you for using the fence cost calculator! |")
+        print("_________________________________________________")
+        print()
+        print()
+        print("+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++")
+        print()
+        print("     𝕀𝕗 𝕪𝕠𝕦 𝕖𝕟𝕛𝕠𝕪𝕖𝕕 𝕥𝕙𝕚𝕤 𝕡𝕣𝕠𝕕𝕦𝕔𝕥, 𝕡𝕝𝕖𝕒𝕤𝕖 𝕔𝕠𝕟𝕤𝕚𝕕𝕖𝕣 𝕤𝕡𝕠𝕟𝕤𝕠𝕣𝕚𝕟𝕘 𝕒 \n        𝕔𝕠𝕗𝕗𝕖𝕖 𝕥𝕠 𝕙𝕖𝕝𝕡 𝕞𝕒𝕚𝕟𝕥𝕒𝕚𝕟 𝕤𝕚𝕥𝕖 𝕔𝕠𝕤𝕥𝕤.☕︎")
+        print()
+        print("+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++")
+        print()
+        print(" This site has a 4 star review on google. Please consider leaving a review!")
+        print(" ★ ★ ★ ★ ☆")
+        print()
+
+        # Leave a review!
+        print(".~~~~----------------------------------------------------~~~~,")
+        print("                  𝒫𝓁𝑒𝒶𝓈𝑒 𝓁𝑒𝒶𝓋𝑒 𝒶 𝓇𝑒𝓋𝒾𝑒𝓌               ")
+        print(".~~~~----------------------------------------------------~~~~,")
+        leave_a_review = input("Review: ")
+        print()
+        print(f"Unknown_User8:       {leave_a_review}")
+        print()
+        if leave_a_review != "":
+            print("✓ Review submitted successfully!")
+        print("Thank you for your contribution!")

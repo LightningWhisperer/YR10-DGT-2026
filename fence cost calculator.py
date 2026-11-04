@@ -1,7 +1,7 @@
-# 2/11/2026
+# 4/11/2026
 # Jean de Klerk
 # Fence cost calculator
-# Version 6
+# Version 7
 
 # Error Checking
 def num_check(question):
@@ -29,7 +29,7 @@ while keep_going == "":
 
     # Credits
     print()
-    print("Coding and formatting by JDK, with the use of Visual Studio code. This project was last updated 1/11/2026")
+    print("Coding and formatting by JDK, with the use of Visual Studio code. This project was last updated 4/11/2026")
     print()
 
     # Title
@@ -94,20 +94,26 @@ while keep_going == "":
     for _ in range(3):
         for i in range (0,4):
             # "______" clears out any previous 'dots'
-            print("Loading" + "." * i + "    ", end="\r", flush=True) # \r resets the line to the start, flush=true removes the previous line before rewriting it
+            print("Processing" + "." * i + "    ", end="\r", flush=True) # \r resets the line to the start, flush=true removes the previous line before rewriting it
             time.sleep(0.5)
-    print()
-    print("\n✓ Calculation Complete!")
-    time.sleep(1)
 
     # Display cost of the fence without GST
+    print()
+    time.sleep(1)
+    print()
     print(f"{section}")
     print(f"   ᴛʜᴇ ᴄᴏꜱᴛ ᴏꜰ ʏᴏᴜʀ ꜰᴇɴᴄᴇ (Excluding GST) ɪꜱ ${cost_of_fence:.2f}") # ".2f" means that the number is formatted with two decimal points (like money)
     print(f"{section}")
     print()
-    time.sleep(2)
 
     # Display cost of the fence with GST
+    import time
+    for _ in range(3):
+         for i in range (0,4):
+            print("Calculating cost with GST" + "." * i + "    ", end="\r", flush=True)
+            time.sleep(0.5)
+    print()
+    time.sleep(1)
     print("******************************************************")
     print(f"ᴛʜᴇ ᴄᴏꜱᴛ ᴏꜰ ʏᴏᴜʀ ꜰᴇɴᴄᴇ (Including GST 15%) ɪꜱ ${gst15:.2f}")
     print("******************************************************")
@@ -115,14 +121,21 @@ while keep_going == "":
     time.sleep(2)
 
     # SUmmay of information entered and outputs
+    import time
+    for _ in range(2):
+             for i in range (0,4):
+                print("Printing Summary" + "." * i + "    ", end="\r", flush=True)
+                time.sleep(0.5)
+
+    print()
     print("========== FENCE SUMMARY ==========")
-    print(f"        Length: {length} meters")
-    print(f"        Width: {width} meters")
-    print(f"        Perimeter: {perimeter} meters")
-    print(f"        Type of fence evaluated: {fence_type}")
-    print(f"        Price per metre: ${cost:.2f}")
-    print(f"        Cost (ex GST): ${cost_of_fence:.2f}")
-    print(f"        Cost (inc GST): ${gst15:.2f}")
+    print(f"       Length: {length} meters")
+    print(f"       Width: {width} meters")
+    print(f"       Perimeter: {perimeter} meters")
+    print(f"       Type of fence evaluated: {fence_type}")
+    print(f"       Price per metre: ${cost:.2f}")
+    print(f"       Cost (ex GST): ${cost_of_fence:.2f}")
+    print(f"       Cost (inc GST): ${gst15:.2f}")
     print("===================================")
     print()
 
@@ -133,7 +146,7 @@ while keep_going == "":
     print()
 
     # End proramme after asking for a review
-    if keep_going != "":  # The exclamation means it is not equal to an empty string (meaning the user didn"t just press <enter>)
+    if keep_going != "":  # The exclamation means it is 'not equal' to an empty string (meaning the user didn"t just press <enter>)
         print("_________________________________________________")
         print("| Thank you for using the fence cost calculator! |")
         print("_________________________________________________")
@@ -155,8 +168,16 @@ while keep_going == "":
         print(".~~~~----------------------------------------------------~~~~,")
         leave_a_review = input("Review: ")
         print()
-        print(f"Unknown_User8:       {leave_a_review}")
         print()
+        print(f"(YOUR REVIEW) Unknown_User8:       {leave_a_review}")
+        print()
+        print("Bah.bah.blacksheep:      This program is so useful. I really appreciate the throughtful work that has gone into this.\n                          This site perfectly calculated the cost of my fence, thus helping me to prepare accordingingly.")
+        print()
+        print("twinkle-little-star:     Although I appreciate this website, it is not the most aesthetically pleasing and therefore \n                          I am still on the hunt for a better program.")
+        print()
+        print()
+        print()
+
         if leave_a_review != "":
             print("✓ Review submitted successfully!")
         print("Thank you for your contribution!")

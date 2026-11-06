@@ -91,7 +91,7 @@ while keep_going == "":
     # Work out the price with added GST (gst15 represents 15%)
     gst15 = cost_of_fence * 1.15
 
-    # Loading Animation
+    # Loading Animation - YouTube video cited on powerpoint
     import time
     for _ in range(3):
         for i in range (0,4):
@@ -123,7 +123,7 @@ while keep_going == "":
     print("*"*53)
     print()
 
-    # SUmmay of information entered and outputs
+    # Summay of information entered and outputs
     import time
     for _ in range(2):
              for i in range (0,4):
@@ -144,12 +144,14 @@ while keep_going == "":
     print()
 
     # Ask if the User wants to keep going
+    print(subsection)
     print("Do you want to keep going?")
+    print(subsection)
     print("--")
     keep_going = input("Press <enter> to keep going or any key to quit  ")
     print()
 
-    # End proramme after asking for a review
+    # End proramme + ask for a review
     if keep_going != "":  # The exclamation means it is 'not equal' to an empty string (meaning the user didn"t just press <enter>)
         print("_"*48)
         print("| Thank you for using the fence cost calculator! |")
@@ -166,7 +168,7 @@ while keep_going == "":
         print(" ★ ★ ★ ★ ☆")
         print()
 
-        # Leave a review!
+        # Leave a review - write a review or press enter to skip
         print(".~~~~","-"*51,"~~~~,")
         print("                𝒫𝓁𝑒𝒶𝓈𝑒 𝓁𝑒𝒶𝓋𝑒 𝒶 𝓇𝑒𝓋𝒾𝑒𝓌 (OPTIONAL)              ")
         print(".~~~~","-"*51,"~~~~,")
@@ -185,9 +187,10 @@ while keep_going == "":
             print()
 
         # Display question asking for star rating
-        print("✮"*40)
+        print("✮ "*40)
         print("PLEASE RATE THIS PROGRAM 1-5 STARS")
-        print("✮"*40)
+        print("✮ "*40)
+        print()
 
         # Error check that stars aren't more than 5 and are a whole number
         def star_check(question):
@@ -198,10 +201,10 @@ while keep_going == "":
                     if 1 <= rating <= 5:
                         return rating
 
-                    print("<<ERROR>> Please enter a number from 1 to 5.")
+                    print("<<ERROR>> Please enter a whole number from 1 to 5.")
 
                 except ValueError:
-                    print("<<ERROR>> Please enter a whole number from 1 to 5.")
+                    print("<<ERROR>> Please enter a valid number from 1-5")
 
         # Ask user for star rating input
         star_rating = (star_check("Answer "))
